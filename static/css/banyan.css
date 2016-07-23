@@ -7,6 +7,16 @@ form.inline {
 }
 
 .col-centered{
-    float: none;
-    margin: 0 auto;
+  float: none;
+  margin: 0 auto;
+}
+
+/*1em = 16px*/
+
+#menu{
+  position: fixed;
+  right: 0;
+  top: 50%;
+  width: 8em;
+  margin-top: -2.5em;
 }
