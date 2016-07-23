@@ -10,6 +10,7 @@
 
     <!-- CUSTOM -->
     <link rel="stylesheet" href="{% static 'css/banyan.css' %}">
+    <link rel="stylesheet" href="{% static 'css/external.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap-switch.css' %}">
 
     <!-- JAVASCRIPT -->
@@ -20,14 +21,10 @@
   </head>
 
   <body>
-    <div class="content container">
-      <div class="row">
-        <div class="col-md-12">
-        {% block content %}
-        {% endblock %}
-        </div>
-      </div>
-    </div>
+    {% block root %}
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
   </body>
 
 </html>
