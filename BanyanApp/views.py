@@ -18,8 +18,8 @@ def root(request):
 
 def home(request):
     lights = Light.objects.all()
-    airs = Air.objects.all()
-    context = {"dict": {"lights":lights}}
+    air = Air.objects.all()[0]
+    context = {"dict": {"lights":lights}, "air":air}
 
     if request.method == 'POST':
         if "lights" in request.POST:
@@ -36,12 +36,11 @@ def home(request):
                 light.state = state
                 light.save()
 
-        elif "all_airs" in request.POST:
-            state = request.POST.get("all_airs")
+        elif "air" in request.POST:
+            state = request.POST.get("air")
             state = bool(state)
-            for air in airs:
-                air.state = state
-                air.save()
+            air.state = state
+            air.save()
 
 
     return render(request, "home.html", context)
