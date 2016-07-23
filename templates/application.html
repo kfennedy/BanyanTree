@@ -21,8 +21,12 @@
   </head>
 
   <body>
-    {% block root %}
-    {% endblock %}
+    <div class="row">
+      <div class="col-md-6 col-centered">
+        {% block root %}
+        {% endblock %}
+      </div>
+    </div>
     {% block content %}
     {% endblock %}
   </body>
