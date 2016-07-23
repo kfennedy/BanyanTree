@@ -1,0 +1,60 @@
+{% extends 'application.html' %}
+
+{% block content %}
+
+  {% for key,value in dict.items %}
+    <div class="row">
+      <div class="col-md-6">
+        <h1> {{key|title}}</h1>
+        {% for item in value %}
+          <h4> {{item.room}}
+          {% if item.state %}
+            <span class="label label-success">ON</span>
+          {% else %}
+            <span class="label label-warning">OFF</span>
+          {% endif %}
+          </h4>
+
+          <form action="/home/" method="post" class="inline">
+            {% csrf_token %}
+            <input type="hidden" name="{{key}}" value="{{key}}"/>
+            <input type="hidden" name="room" value="{{item.room}}"/>
+            <input type="hidden" name="state" value="True"/>
+            <input type="submit" value="TURN ON" class="btn btn-primary">
+          </form>
+
+          <form action="/home/" method="post" class="inline">
+            {% csrf_token %}
+            <input type="hidden" name="{{key}}" value="{{key}}"/>
+            <input type="hidden" name="room" value="{{item.room}}"/>
+            <input type="hidden" name="state" value="False"/>
+            <input type="submit" value="TURN OFF" class="btn btn-primary">
+          </form>
+        {% endfor %}
+      </div>
+      <div class="col-md-6">
+        <form action="/home/" method="post" class="inline">
+          {% csrf_token %}
+          <input type="hidden" name="all_lights" value="a"/>
+          <input type="submit" value="LIGHTS ALL ON" class="btn btn-danger">
+        </form>
+        <form action="/home/" method="post" class="inline">
+          {% csrf_token %}
+          <input type="hidden" name="all_lights" value=""/>
+          <input type="submit" value="LIGHTS ALL OFF" class="btn btn-danger">
+        </form>
+        <form action="/home/" method="post" class="inline">
+          {% csrf_token %}
+          <input type="hidden" name="all_airs" value="a"/>
+          <input type="submit" value="Aircon ON" class="btn btn-danger">
+        </form>
+        <form action="/home/" method="post" class="inline">
+          {% csrf_token %}
+          <input type="hidden" name="all_airs" value=""/>
+          <input type="submit" value="Aircon OFF" class="btn btn-danger">
+        </form>
+      </div>
+    </div>
+  {% endfor %}
+
+{% endblock %}
