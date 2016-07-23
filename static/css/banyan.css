@@ -44,3 +44,7 @@ body {
     display: block;
   }
 }
+
+form.inline {
+  display: inline-block;
+}
