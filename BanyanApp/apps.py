@@ -7,4 +7,4 @@ class BanyanAppConfig(AppConfig):
     name = 'BanyanApp'
 
     def ready(self):
-        import BanyanApp.management.commands.arduino
+        pass

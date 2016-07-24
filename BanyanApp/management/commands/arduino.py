@@ -80,7 +80,7 @@ class Command(BaseCommand):
                 pin = array[1]
                 light = Light.objects.get(pin=pin)
                 light.state = False
-                light.savec
+                light.save()
             else:
                 print "COMING FROM ARDUINO: " , x
         ser.close()
