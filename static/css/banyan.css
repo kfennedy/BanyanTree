@@ -15,8 +15,7 @@ form.inline {
 
 #menu{
   position: fixed;
-  right: 0;
-  top: 50%;
-  width: 8em;
-  margin-top: -2.5em;
+  left: 60%;
+  top: 100%;
+  margin-top: -5em;
 }
