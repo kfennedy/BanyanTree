@@ -1,0 +1,91 @@
+{% extends 'application.html' %}
+
+{% block content %}
+
+<div id=menu>
+  <a href="/indiv/">
+    <input type="button" value="Refresh" class="btn btn-success">
+  </a>
+  <a href="/indiv/">
+    <input type="button" value="All OFF" class="btn btn-success">
+  </a>
+  <a href="/indiv/">
+    <input type="button" value="My Account" class="btn btn-success">
+  </a>
+</div>
+
+<div class="content container">
+  <div class="row">
+
+    <div class="col-sm-5">
+      <img src="/static/img/plan.svg" class="plan">
+    </div>
+
+    <div class="col-sm-4">
+
+      {% for key,value in dict.items %}
+        <h1> {{key|title}}</h1>
+        {% for item in value %}
+          <h4> {{item.room}}
+          {% if item.state %}
+            <span class="label label-success">ON</span>
+          {% else %}
+            <span class="label label-warning">OFF</span>
+          {% endif %}
+          </h4>
+
+          <form action="/indiv/" method="post" class="inline">
+            {% csrf_token %}
+            <input type="hidden" name="{{key}}" value="{{key}}"/>
+            <input type="hidden" name="room" value="{{item.room}}"/>
+            <input type="hidden" name="state" value="True"/>
+            <input type="submit" value="TURN ON" class="btn btn-primary">
+          </form>
+
+          <form action="/indiv/" method="post" class="inline">
+            {% csrf_token %}
+            <input type="hidden" name="{{key}}" value="{{key}}"/>
+            <input type="hidden" name="room" value="{{item.room}}"/>
+            <input type="hidden" name="state" value="False"/>
+            <input type="submit" value="TURN OFF" class="btn btn-primary">
+          </form>
+        {% endfor %}
+      {% endfor %}
+
+      <form action="/indiv/" method="post" class="inline">
+        {% csrf_token %}
+        <input type="hidden" name="all_lights" value="a"/>
+        <input type="submit" value="LIGHTS ALL ON" class="btn btn-danger">
+      </form>
+      <form action="/indiv/" method="post" class="inline">
+        {% csrf_token %}
+        <input type="hidden" name="all_lights" value=""/>
+        <input type="submit" value="LIGHTS ALL OFF" class="btn btn-danger">
+      </form>
+
+    </div>
+
+    <div class="col-sm-3">
+      <h4>Aircon
+        {% if air.state %}
+          <span class="label label-success">ON</span>
+        {% else %}
+          <span class="label label-warning">OFF</span>
+        {% endif %}
+      </h1>
+      <form action="/indiv/" method="post" class="inline">
+        {% csrf_token %}
+        <input type="hidden" name="air" value="a"/>
+        <input type="submit" value="Aircon ON" class="btn btn-primary">
+      </form>
+      <form action="/indiv/" method="post" class="inline">
+        {% csrf_token %}
+        <input type="hidden" name="air" value=""/>
+        <input type="submit" value="Aircon OFF" class="btn btn-primary">
+      </form>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

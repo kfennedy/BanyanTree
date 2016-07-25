@@ -20,6 +20,12 @@ def home(request):
     lights = Light.objects.all()
     air = Air.objects.all()[0]
     context = {"dict": {"lights":lights}, "air":air}
+    return render(request, "home.html", context)
+
+def indiv(request):
+    lights = Light.objects.all()
+    air = Air.objects.all()[0]
+    context = {"dict": {"lights":lights}, "air":air}
 
     if request.method == 'POST':
         if "lights" in request.POST:
@@ -43,4 +49,4 @@ def home(request):
             air.save()
 
 
-    return render(request, "home.html", context)
+    return render(request, "indiv.html", context)
