@@ -29,8 +29,9 @@ class Command(BaseCommand):
             x = ser.readline()
 
             if x == "output\r\n":
-                print "db = ", db
+                # print "db = ", db
                 aha = bytes(db)
                 ser.write(aha)
+                # ser.flush()
             else:
                 print "COMING FROM ARDUINO: ", x
