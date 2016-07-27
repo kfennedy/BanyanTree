@@ -16,11 +16,11 @@ from django.core.management.base import BaseCommand, CommandError
 def root(request):
     return render(request, "root.html")
 
-def home(request):
+def test(request):
     lights = Light.objects.all()
     air = Air.objects.all()[0]
     context = {"dict": {"lights":lights}, "air":air}
-    return render(request, "home.html", context)
+    return render(request, "test.html", context)
 
 def indiv(request):
     lights = Light.objects.all()

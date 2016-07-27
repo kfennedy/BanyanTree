@@ -6,16 +6,48 @@ form.inline {
   display: inline-block;
 }
 
-.col-centered{
+.col-centered {
   float: none;
   margin: 0 auto;
 }
 
-/*1em = 16px*/
+.floorplan {
+  margin-left: 2%;
+  margin-top: 2%;
+  position: absolute;
+}
 
-#menu{
+.base {
+  position: absolute;
+}
+
+/*1em = 16px*/
+#menu {
   position: fixed;
   left: 60%;
   top: 100%;
   margin-top: -5em;
+}
+
+#z1 {
+  z-index: 1;
+}
+
+#z2 {
+  z-index: 2;
+  position: absolute;
+}
+
+#z3 {
+  z-index: 3;
+  position: absolute;
+  display: none;
+}
+
+.green2, .blank2{
+  top: 126px;
+}
+
+.green3, .blank3{
+  top: 508px;
 }
