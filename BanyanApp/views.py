@@ -48,5 +48,12 @@ def indiv(request):
             air.state = state
             air.save()
 
+        elif "air_add" in request.POST:
+            air.value += 1
+            air.save()
+
+        elif "air_sub" in request.POST:
+            air.value -= 1
+            air.save()
 
     return render(request, "indiv.html", context)

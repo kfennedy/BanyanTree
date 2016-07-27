@@ -66,13 +66,12 @@
     </div>
 
     <div class="col-sm-3">
-      <h4>Aircon
-        {% if air.state %}
-          <span class="label label-success">ON</span>
-        {% else %}
-          <span class="label label-warning">OFF</span>
-        {% endif %}
-      </h1>
+      <h1>Aircon {{air.value}} °C</h1>
+      {% if air.state %}
+        <span class="label label-success">ON</span>
+      {% else %}
+        <span class="label label-warning">OFF</span>
+      {% endif %}
       <form action="/indiv/" method="post" class="inline">
         {% csrf_token %}
         <input type="hidden" name="air" value="a"/>
@@ -82,6 +81,16 @@
         {% csrf_token %}
         <input type="hidden" name="air" value=""/>
         <input type="submit" value="Aircon OFF" class="btn btn-primary">
+      </form>
+      <form action="/indiv/" method="post" class="inline">
+        {% csrf_token %}
+        <input type="hidden" name="air_add" value=""/>
+        <input type="submit" value="UP" class="btn btn-info">
+      </form>
+      <form action="/indiv/" method="post" class="inline">
+        {% csrf_token %}
+        <input type="hidden" name="air_sub" value=""/>
+        <input type="submit" value="DOWN" class="btn btn-info">
       </form>
     </div>
 
