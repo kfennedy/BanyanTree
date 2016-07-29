@@ -9,9 +9,11 @@ class Command(BaseCommand):
         pass
 
     def handle(self, *args, **options):
-        ser = serial.Serial('/dev/cu.usbmodem1421', 9600)
+        ser = serial.Serial('/dev/cu.usbmodem14131', 9600)
 
         while True:
+            airs = Air.objects.all()
+            air = airs[0]
             x = ser.readline()
             if x[:6] == "toggle":
                 array = x.split('_')
@@ -21,5 +23,13 @@ class Command(BaseCommand):
                 wanted_state = not(light.state)
                 light.state = wanted_state
                 light.save()
+            elif x=="add\r\n":
+                air.value +=1
+                air.save()
+                print "adding temp"
+            elif x=="sub\r\n":
+                air.value -=1
+                air.save()
+                print "subtracting temp"
             else:
                 print "COMING FROM ARDUINO: ", x

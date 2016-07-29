@@ -9,7 +9,7 @@ class Command(BaseCommand):
         pass
 
     def handle(self, *args, **options):
-        ser = serial.Serial('/dev/cu.usbmodem1411', 9600)
+        ser = serial.Serial('/dev/cu.usbmodem14121', 9600)
 
         while True:
             lights = Light.objects.all()
