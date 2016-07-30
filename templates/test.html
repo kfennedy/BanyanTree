@@ -41,15 +41,15 @@
       {% csrf_token %}
       <input type="hidden" name="lights" value="light_on"/>
       <input type="hidden" name="conf" value={{conf}}/>
-      <input type="hidden" id="mod" name="mod" value=""/>
+      <input type="hidden" id="mod1" name="mod" value=""/>
       <input type="hidden" name="state" value="True"/>
       <input type="submit" value="TURN ON" class="btn btn-primary">
     </form>
     <form action="/test/" method="post" class="inline">
       {% csrf_token %}
-      <input type="hidden" name="lights" value="light_on"/>
+      <input type="hidden" name="lights" value="light_off"/>
       <input type="hidden" name="conf" value={{conf}}/>
-      <input type="hidden" id="mod" name="mod" value=""/>
+      <input type="hidden" id="mod2" name="mod" value=""/>
       <input type="hidden" name="state" value="False"/>
       <input type="submit" value="TURN OFF" class="btn btn-primary">
     </form>

@@ -29,9 +29,12 @@ def test(request):
             state = clean(request.POST.get("state"))
             if number:
                 mod_name = selected_conf + number
-                for light in modLights[mod_name]:
+                rooms = modLights[mod_name]
+                for room in rooms:
+                    light = Light.objects.get(room=room)
                     light.state = state
                     light.save()
+                    print
             else:
                 for light in lights:
                     light.state = state

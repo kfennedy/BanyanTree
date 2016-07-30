@@ -6,7 +6,8 @@ $(document).ready(function(){
     var target = 'div#z3.green'+id;
     $('div#z3').not($(target)).hide();
     $(target).show();
-    document.getElementById('mod').value = id
+    document.getElementById('mod1').value = id
+    document.getElementById('mod2').value = id
   });
 
   $('.green1').click(function(){
@@ -21,5 +22,7 @@ $(document).ready(function(){
     $(this).hide();
     document.getElementById('mod').value = ""
   });
+
+
 
 });
