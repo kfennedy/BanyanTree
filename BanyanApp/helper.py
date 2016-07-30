@@ -23,3 +23,13 @@ modLights ={
 "A2": [ "living1", 'living2', "kitchen1", "kitchen2", "bed1", "bed2", "door" ],
 "A3": [ "toilet1", "toilet2" ]
 }
+
+def turn_smart_lights(room,state):
+    for mod, groups in modLights.items():
+        for r in groups:
+            if r == room:
+                module = mod
+                for r in modLights[module]:
+                    light = Light.objects.get(room=r)
+                    light.state = state
+                    light.save()

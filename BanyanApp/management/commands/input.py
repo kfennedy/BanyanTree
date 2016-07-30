@@ -2,6 +2,7 @@ import serial, threading, time
 from django.core.management.base import BaseCommand, CommandError
 from BanyanApp.models import *
 from BanyanApp.views import *
+from BanyanApp.helper import *
 
 class Command(BaseCommand):
 
@@ -21,8 +22,7 @@ class Command(BaseCommand):
                 print "toggled pin = "+ pin
                 light = Light.objects.get(pin=int(pin))
                 wanted_state = not(light.state)
-                light.state = wanted_state
-                light.save()
+                turn_smart_lights(light.room, wanted_state)
             elif x=="add\r\n":
                 air.value +=1
                 air.save()

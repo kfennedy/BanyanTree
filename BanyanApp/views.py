@@ -20,6 +20,7 @@ def root(request):
 def test(request):
 
     lights = Light.objects.all()
+    air = Air.objects.all()[0]
     selected_conf = "A"
     show_status = show
 
@@ -44,7 +45,7 @@ def test(request):
             show_status = clean(request.POST.get("show"))
 
     light_status = build_status()
-    context = {"dict": {"lights":lights}, "conf":selected_conf, "show":show_status, "status":light_status}
+    context = {"dict": {"lights":lights}, "air":air, "conf":selected_conf, "show":show_status, "status":light_status}
 
     return render(request, "test.html", context)
 
