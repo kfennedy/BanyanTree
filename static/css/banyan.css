@@ -50,11 +50,11 @@ form.inline {
   position: absolute;
 }
 
-/*#z5 {
+#z5 {
   z-index: 5;
   position: absolute;
   display: none;
-}*/
+}
 
 .green2, .blank2, .off2, .on2{
   top: 126px;

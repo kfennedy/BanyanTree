@@ -39,11 +39,11 @@ def test(request):
                 for light in lights:
                     light.state = state
                     light.save()
+            show_status = True
         elif "show" in request.POST:
             show_status = clean(request.POST.get("show"))
 
     light_status = build_status()
-    print "SHOW STATUS = ", show
     context = {"dict": {"lights":lights}, "conf":selected_conf, "show":show_status, "status":light_status}
 
     return render(request, "test.html", context)
