@@ -6,16 +6,20 @@ $(document).ready(function(){
     var target = 'div#z3.green'+id;
     $('div#z3').not($(target)).hide();
     $(target).show();
+    document.getElementById('mod').value = id
   });
 
   $('.green1').click(function(){
     $(this).hide();
+    document.getElementById('mod').value = ""
   });
   $('.green2').click(function(){
     $(this).hide();
+    document.getElementById('mod').value = ""
   });
   $('.green3').click(function(){
     $(this).hide();
+    document.getElementById('mod').value = ""
   });
 
 });

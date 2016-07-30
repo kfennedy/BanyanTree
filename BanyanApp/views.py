@@ -16,10 +16,33 @@ from django.core.management.base import BaseCommand, CommandError
 def root(request):
     return render(request, "root.html")
 
+#change this to confA
 def test(request):
+
     lights = Light.objects.all()
-    air = Air.objects.all()[0]
-    context = {"dict": {"lights":lights}, "air":air}
+    selected_conf = "A"
+    show_status = show
+
+    if request.method == 'POST':
+        if "lights" in request.POST:
+            number = request.POST.get("mod")
+            state = clean(request.POST.get("state"))
+            if number:
+                mod_name = selected_conf + number
+                for light in modLights[mod_name]:
+                    light.state = state
+                    light.save()
+            else:
+                for light in lights:
+                    light.state = state
+                    light.save()
+        elif "show" in request.POST:
+            show_status = clean(request.POST.get("show"))
+
+    light_status = build_status()
+    print "SHOW STATUS = ", show
+    context = {"dict": {"lights":lights}, "conf":selected_conf, "show":show_status, "status":light_status}
+
     return render(request, "test.html", context)
 
 def indiv(request):
@@ -57,3 +80,11 @@ def indiv(request):
             air.save()
 
     return render(request, "indiv.html", context)
+
+# {'A1': False, 'A3': False, 'A2': False}
+def build_status():
+    modules = modLights.keys()
+    status = {}
+    for mod in modules:
+        status[mod] = Light.objects.get(room=modLights[mod][0]).state
+    return status

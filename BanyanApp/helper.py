@@ -8,3 +8,18 @@ def clean(value):
         return False
     else:
         return None
+
+# A, B, or C
+selected_conf = None
+
+# A1, B2, B3
+selected_mod = None
+
+show = False
+
+# modules and room relationship
+modLights ={
+"A1": [ "balcony1", "balcony2" ],
+"A2": [ "living1", 'living2', "kitchen1", "kitchen2", "bed1", "bed2", "door" ],
+"A3": [ "toilet1", "toilet2" ]
+}

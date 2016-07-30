@@ -2,20 +2,74 @@
 
 {% block content %}
 
-  <div class="floorplan">
+{% load app_filters %}
 
-    <div id="z1" class="base">
-      <img src="/static/img/floorplan.svg" usemap="#floorplan">
+<div class="row">
+
+  <div class="col-sm-4">
+    <div class="floorplan">
+
+      <div id="z1" class="base">
+        <img src="/static/img/floorplan.svg" usemap="#floorplan">
+      </div>
+
+      <div id="z2" class="blank1"><img src="/static/img/blank1.svg"></div>
+      <div id="z2" class="blank2"><img src="/static/img/blank2.svg"></div>
+      <div id="z2" class="blank3"><img src="/static/img/blank3.svg"></div>
+
+      <div id="z3" class="green1"><img src="/static/img/green1.svg"></div>
+      <div id="z3" class="green2"><img src="/static/img/green2.svg"></div>
+      <div id="z3" class="green3"><img src="/static/img/green3.svg"></div>
+
+      {% if show %}
+
+        {% for key,value in status.items %}
+          {% if value == True %}
+            <div id="z4" class={{ key|class_on }}><img src= {{ key|src_on }}></div>
+          {% else %}
+            <div id="z4" class={{ key|class_off }}><img src= {{ key|src_off }}></div>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
     </div>
-
-    <div id="z2" class="blank1"><img src="/static/img/blank1.svg"></div>
-    <div id="z2" class="blank2"><img src="/static/img/blank2.svg"></div>
-    <div id="z2" class="blank3"><img src="/static/img/blank3.svg"></div>
-
-    <div id="z3" class="green1"><img src="/static/img/green1.svg"></div>
-    <div id="z3" class="green2"><img src="/static/img/green2.svg"></div>
-    <div id="z3" class="green3"><img src="/static/img/green3.svg"></div>
-
   </div>
+
+  <div class="col-sm-8">
+    <h1>Configuration {{conf}}</h1>
+    <form action="/test/" method="post" class="inline">
+      {% csrf_token %}
+      <input type="hidden" name="lights" value="light_on"/>
+      <input type="hidden" name="conf" value={{conf}}/>
+      <input type="hidden" id="mod" name="mod" value=""/>
+      <input type="hidden" name="state" value="True"/>
+      <input type="submit" value="TURN ON" class="btn btn-primary">
+    </form>
+    <form action="/test/" method="post" class="inline">
+      {% csrf_token %}
+      <input type="hidden" name="lights" value="light_on"/>
+      <input type="hidden" name="conf" value={{conf}}/>
+      <input type="hidden" id="mod" name="mod" value=""/>
+      <input type="hidden" name="state" value="False"/>
+      <input type="submit" value="TURN OFF" class="btn btn-primary">
+    </form>
+    <form action="/test/" method="post">
+      {% csrf_token %}
+      <input type="hidden" name="show" value="True"/>
+      <input type="submit" value="SHOW LIGHTS" class="btn btn-info">
+    </form>
+    <form action="/test/" method="post">
+      {% csrf_token %}
+      <input type="hidden" name="show" value="False"/>
+      <input type="submit" value="HIDE LIGHTS" class="btn btn-info">
+    </form>
+    <h3>SHOW STATUS = {{show}}</h3>
+    {% for key,value in status.items %}
+      <h3> MOD = {{key}}     VALUE = {{value}}</h3>
+    {% endfor %}
+  </div>
+
+
+</div>
 
 {% endblock %}

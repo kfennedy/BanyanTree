@@ -45,10 +45,22 @@ form.inline {
   display: none;
 }
 
-.green2, .blank2{
-  top: 126px;
+#z4 {
+  z-index: 4;
+  position: absolute;
 }
 
-.green3, .blank3{
+/*#z5 {
+  z-index: 5;
+  position: absolute;
+  display: none;
+}*/
+
+.green2, .blank2, .off2, .on2{
+  top: 126px;
+  position: absolute;
+}
+
+.green3, .blank3, .off3, .on3{
   top: 508px;
 }
