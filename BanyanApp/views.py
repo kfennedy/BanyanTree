@@ -16,8 +16,8 @@ from django.core.management.base import BaseCommand, CommandError
 def root(request):
     return render(request, "root.html")
 
-#change this to confA
-def test(request):
+#change this to configA
+def configA(request):
 
     lights = Light.objects.all()
     air = Air.objects.all()[0]
@@ -25,9 +25,10 @@ def test(request):
     show_status = show
 
     if request.method == 'POST':
+
         if "lights" in request.POST:
             number = request.POST.get("mod")
-            state = clean(request.POST.get("state"))
+            state = clean(request.POST.get("status"))
             if number:
                 mod_name = selected_conf + number
                 rooms = modLights[mod_name]
@@ -41,13 +42,27 @@ def test(request):
                     light.state = state
                     light.save()
             show_status = True
+
         elif "show" in request.POST:
             show_status = clean(request.POST.get("show"))
+
+        elif "aircon" in request.POST:
+            state = clean(request.POST.get("state"))
+            air.state = state
+            air.save()
+
+        elif "air_add" in request.POST:
+            air.value += 1
+            air.save()
+
+        elif "air_sub" in request.POST:
+            air.value -= 1
+            air.save()
 
     light_status = build_status()
     context = {"dict": {"lights":lights}, "air":air, "conf":selected_conf, "show":show_status, "status":light_status}
 
-    return render(request, "test.html", context)
+    return render(request, "configA.html", context)
 
 def indiv(request):
     lights = Light.objects.all()
@@ -69,9 +84,8 @@ def indiv(request):
                 light.state = state
                 light.save()
 
-        elif "air" in request.POST:
-            state = request.POST.get("air")
-            state = bool(state)
+        elif "aircon" in request.POST:
+            state = clean(request.POST.get("state"))
             air.state = state
             air.save()
 

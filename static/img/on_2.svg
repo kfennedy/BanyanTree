@@ -12,13 +12,13 @@
                         <rect id="Rectangle-23" x="0" y="0" width="305" height="382"></rect>
                         <rect id="Rectangle-23" x="180" y="382" width="125" height="117"></rect>
                     </g>
-                    <ellipse id="Oval" stroke="#019B63" stroke-width="4" fill="#F8E81C" cx="104.323651" cy="314.387984" rx="12.3236515" ry="12.3879844"></ellipse>
-                    <ellipse id="Oval" stroke="#019B63" stroke-width="4" fill="#F8E81C" cx="214.323651" cy="314.387984" rx="12.3236515" ry="12.3879844"></ellipse>
-                    <ellipse id="Oval" stroke="#019B63" stroke-width="4" fill="#F8E81C" cx="104.323651" cy="199.387984" rx="12.3236515" ry="12.3879844"></ellipse>
-                    <ellipse id="Oval" stroke="#019B63" stroke-width="4" fill="#F8E81C" cx="214.323651" cy="199.387984" rx="12.3236515" ry="12.3879844"></ellipse>
-                    <ellipse id="Oval" stroke="#019B63" stroke-width="4" fill="#F8E81C" cx="104.323651" cy="68.3879844" rx="12.3236515" ry="12.3879844"></ellipse>
-                    <ellipse id="Oval" stroke="#019B63" stroke-width="4" fill="#F8E81C" cx="214.323651" cy="68.3879844" rx="12.3236515" ry="12.3879844"></ellipse>
-                    <ellipse id="Oval" stroke="#019B63" stroke-width="4" fill="#F8E81C" cx="214.323651" cy="431.387984" rx="12.3236515" ry="12.3879844"></ellipse>
+                    <ellipse id="Oval" stroke="#019B63" stroke-width="4" fill-opacity="0.5" fill="#F8E71C" cx="104.323651" cy="314.387984" rx="12.3236515" ry="12.3879844"></ellipse>
+                    <ellipse id="Oval" stroke="#019B63" stroke-width="4" fill-opacity="0.5" fill="#F8E71C" cx="214.323651" cy="314.387984" rx="12.3236515" ry="12.3879844"></ellipse>
+                    <ellipse id="Oval" stroke="#019B63" stroke-width="4" fill-opacity="0.5" fill="#F8E71C" cx="104.323651" cy="199.387984" rx="12.3236515" ry="12.3879844"></ellipse>
+                    <ellipse id="Oval" stroke="#019B63" stroke-width="4" fill-opacity="0.5" fill="#F8E71C" cx="214.323651" cy="199.387984" rx="12.3236515" ry="12.3879844"></ellipse>
+                    <ellipse id="Oval" stroke="#019B63" stroke-width="4" fill-opacity="0.5" fill="#F8E71C" cx="104.323651" cy="68.3879844" rx="12.3236515" ry="12.3879844"></ellipse>
+                    <ellipse id="Oval" stroke="#019B63" stroke-width="4" fill-opacity="0.5" fill="#F8E71C" cx="214.323651" cy="68.3879844" rx="12.3236515" ry="12.3879844"></ellipse>
+                    <ellipse id="Oval" stroke="#019B63" stroke-width="4" fill-opacity="0.5" fill="#F8E71C" cx="214.323651" cy="431.387984" rx="12.3236515" ry="12.3879844"></ellipse>
                 </g>
             </g>
         </g>

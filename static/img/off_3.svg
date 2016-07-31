@@ -5,12 +5,12 @@
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="draft" transform="translate(-1143.000000, -537.000000)" fill="#FFFFFF">
+        <g id="draft" transform="translate(-1143.000000, -537.000000)">
             <g id="light_off" transform="translate(1143.000000, 29.000000)">
                 <g id="off_3" transform="translate(0.000000, 508.000000)">
-                    <rect id="blank3" fill-opacity="0.01" x="0" y="0" width="180" height="117"></rect>
-                    <ellipse id="Oval" stroke="#019B63" stroke-width="4" cx="58.3236515" cy="49.3879844" rx="12.3236515" ry="12.3879844"></ellipse>
-                    <ellipse id="Oval" stroke="#019B63" stroke-width="4" cx="140.323651" cy="49.3879844" rx="12.3236515" ry="12.3879844"></ellipse>
+                    <rect id="blank3" fill-opacity="0.01" fill="#FFFFFF" x="0" y="0" width="180" height="117"></rect>
+                    <ellipse id="Oval" stroke="#019B63" stroke-width="4" fill-opacity="0.5" fill="#019B63" cx="58.3236515" cy="49.3879844" rx="12.3236515" ry="12.3879844"></ellipse>
+                    <ellipse id="Oval" stroke="#019B63" stroke-width="4" fill-opacity="0.5" fill="#019B63" cx="140.323651" cy="49.3879844" rx="12.3236515" ry="12.3879844"></ellipse>
                 </g>
             </g>
         </g>

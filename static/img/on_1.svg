@@ -9,8 +9,8 @@
             <g id="light_on" transform="translate(1491.000000, 29.000000)">
                 <g id="on_1">
                     <rect id="blank1" fill-opacity="0.01" fill="#FFFFFF" x="0" y="0" width="305" height="126"></rect>
-                    <ellipse id="Oval" stroke="#019B63" stroke-width="4" fill="#F8E81C" cx="104.323651" cy="75.3879844" rx="12.3236515" ry="12.3879844"></ellipse>
-                    <ellipse id="Oval" stroke="#019B63" stroke-width="4" fill="#F8E81C" cx="214.323651" cy="75.3879844" rx="12.3236515" ry="12.3879844"></ellipse>
+                    <ellipse id="Oval" stroke="#019B63" stroke-width="4" fill-opacity="0.5" fill="#F8E71C" cx="104.323651" cy="75.3879844" rx="12.3236515" ry="12.3879844"></ellipse>
+                    <ellipse id="Oval" stroke="#019B63" stroke-width="4" fill-opacity="0.5" fill="#F8E71C" cx="214.323651" cy="75.3879844" rx="12.3236515" ry="12.3879844"></ellipse>
                 </g>
             </g>
         </g>

@@ -41,28 +41,35 @@
 
   <div class="col-sm-4">
     <h1>Configuration {{conf}}</h1>
-    <form action="/test/" method="post" class="inline">
+    <form action="/configA/" method="post" class="inline">
+      {% csrf_token %}
+      <!-- checkbox is on development -->
+      <input type="checkbox" class="switch" name="toggle"/>
+      <!-- <input type="hidden" name="lights" value="light_on"/>
+      <input type="hidden" id="mod1" name="mod" value=""/>
+      <input type="hidden" name="status" value="True"/>
+      <input type="submit" value="TURN ON" class="btn btn-primary"> -->
+    </form>
+    <form action="/configA/" method="post" class="inline">
       {% csrf_token %}
       <input type="hidden" name="lights" value="light_on"/>
-      <input type="hidden" name="conf" value={{conf}}/>
       <input type="hidden" id="mod1" name="mod" value=""/>
-      <input type="hidden" name="state" value="True"/>
+      <input type="hidden" name="status" value="True"/>
       <input type="submit" value="TURN ON" class="btn btn-primary">
     </form>
-    <form action="/test/" method="post" class="inline">
+    <form action="/configA/" method="post" class="inline">
       {% csrf_token %}
       <input type="hidden" name="lights" value="light_off"/>
-      <input type="hidden" name="conf" value={{conf}}/>
       <input type="hidden" id="mod2" name="mod" value=""/>
-      <input type="hidden" name="state" value="False"/>
+      <input type="hidden" name="status" value="False"/>
       <input type="submit" value="TURN OFF" class="btn btn-primary">
     </form>
-    <form action="/test/" method="post">
+    <form action="/configA/" method="post">
       {% csrf_token %}
       <input type="hidden" name="show" value="True"/>
       <input type="submit" value="SHOW LIGHTS" class="btn btn-info">
     </form>
-    <form action="/test/" method="post">
+    <form action="/configA/" method="post">
       {% csrf_token %}
       <input type="hidden" name="show" value="False"/>
       <input type="submit" value="HIDE LIGHTS" class="btn btn-info">
@@ -80,27 +87,30 @@
     {% else %}
       <span class="label label-warning">OFF</span>
     {% endif %}
-    <form action="/indiv/" method="post" class="inline">
+    <form action="/configA/" method="post">
       {% csrf_token %}
-      <input type="hidden" name="air" value="a"/>
-      <input type="submit" value="Aircon ON" class="btn btn-primary">
+      <input type="hidden" name="aircon" value=""/>
+      <input type="hidden" name="state" value="True"/>
+      <input type="submit" value="ON" class="btn btn-primary">
     </form>
-    <form action="/indiv/" method="post" class="inline">
+    <form action="/configA/" method="post">
       {% csrf_token %}
-      <input type="hidden" name="air" value=""/>
-      <input type="submit" value="Aircon OFF" class="btn btn-primary">
+      <input type="hidden" name="aircon" value=""/>
+      <input type="hidden" name="state" value="False"/>
+      <input type="submit" value="OFF" class="btn btn-primary">
     </form>
-    <form action="/indiv/" method="post">
+    <form action="/configA/" method="post">
       {% csrf_token %}
       <input type="hidden" name="air_add" value=""/>
       <input type="submit" value="UP" class="btn btn-info">
     </form>
-    <form action="/indiv/" method="post" class="inline">
+    <form action="/configA/" method="post">
       {% csrf_token %}
       <input type="hidden" name="air_sub" value=""/>
       <input type="submit" value="DOWN" class="btn btn-info">
     </form>
   </div>
+
 
 
 </div>
