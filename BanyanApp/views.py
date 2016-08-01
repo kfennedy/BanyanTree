@@ -12,13 +12,14 @@ from BanyanApp.helper import *
 import serial, threading, time
 import tkMessageBox
 from django.core.management.base import BaseCommand, CommandError
+counter = Air.objects.all()[0].value
 
 def root(request):
     return render(request, "root.html")
 
 #change this to configA
 def configA(request):
-
+    global counter
     lights = Light.objects.all()
     air = Air.objects.all()[0]
     selected_conf = "A"
@@ -52,12 +53,16 @@ def configA(request):
             air.save()
 
         elif "air_add" in request.POST:
-            air.value += 1
-            air.save()
+            if counter != max_temp:
+                air.value += 1
+                counter += 1
+                air.save()
 
         elif "air_sub" in request.POST:
-            air.value -= 1
-            air.save()
+            if counter != min_temp:
+                air.value -= 1
+                counter -= 1
+                air.save()
 
     light_status = build_status()
     context = {"dict": {"lights":lights}, "air":air, "conf":selected_conf, "show":show_status, "status":light_status}

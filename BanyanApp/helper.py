@@ -1,5 +1,8 @@
 from BanyanApp.models import *
 
+min_temp = 18
+max_temp = 32
+
 #return a Python boolean object
 def clean(value):
     if value == "True":
