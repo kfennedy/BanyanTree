@@ -6,13 +6,13 @@
 
 <div id=menu>
   <a href="/configA/">
-    <input type="button" value="Refresh" class="btn btn-success">
+    <input type="image" src="/static/img/refresh.svg" class="btn">
   </a>
   <a href="/configA/">
-    <input type="button" value="All OFF" class="btn btn-success">
+    <input type="image" src="/static/img/account.svg"class="btn">
   </a>
   <a href="/configA/">
-    <input type="button" value="My Account" class="btn btn-success">
+    <input type="image" src="/static/img/help.svg" class="btn">
   </a>
 </div>
 
@@ -56,19 +56,19 @@
         <form action="/configA/" method="post" class="inline">
           {% csrf_token %}
           <input type="hidden" name="status" value="False"/>
-          <input type="image" id="saveform" src="/static/img/default.svg" class="btn mode"/>
+          <input type="image" src="/static/img/default.svg" class="btn mode"/>
           <p> DEFAULT </p>
         </form>
         <form action="/configA/" method="post" class="inline">
           {% csrf_token %}
           <input type="hidden" name="status" value="False"/>
-          <input type="image" id="saveform" src="/static/img/party.svg" class="btn mode"/>
+          <input type="image" src="/static/img/party.svg" class="btn mode"/>
           <p> PARTY </p>
         </form>
         <form action="/configA/" method="post" class="inline">
           {% csrf_token %}
           <input type="hidden" name="status" value="False"/>
-          <input type="image" id="saveform" src="/static/img/sleep.svg" class="btn mode"/>
+          <input type="image" src="/static/img/sleep.svg" class="btn mode"/>
           <p> SLEEP </p>
         </form>
       </div>

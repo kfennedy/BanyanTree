@@ -45,9 +45,9 @@ form.inline {
 /*1em = 16px*/
 #menu {
   position: fixed;
-  left: 60%;
+  left: 45%;
   top: 100%;
-  margin-top: -5em;
+  margin-top: -11em;
 }
 
 #z1 {
