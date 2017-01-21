@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="306px" height="306px" viewBox="0 0 306 306" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>no_off</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0,22.99199 C0,10.2938646 10.2929507,1.72824173e-15 22.9978105,1.72824173e-15 L266.805738,1.72824173e-15 C279.507078,1.72824173e-15 289.803549,10.3048494 289.803549,22.99199 L289.803549,266.547097 C289.803549,279.245223 279.510598,289.539087 266.805738,289.539087 L22.9978105,289.539087 C10.2964705,289.539087 0,279.234238 0,266.547097 L0,22.99199 Z" id="path-1"></path>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="4.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="3" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.587372449   0 0 0 0 0.587372449   0 0 0 0 0.587372449  0 0 0 0.503198596 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-4" y="-4" width="297.803549" height="297.539087">
+            <rect x="-4" y="-4" width="297.803549" height="297.539087" fill="white"></rect>
+            <use xlink:href="#path-1" fill="black"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="home_off" transform="translate(-694.000000, -15.000000)">
+            <g id="no_off" transform="translate(702.000000, 20.000000)">
+                <g id="Rectangle-14">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <use stroke="#4990E2" mask="url(#mask-3)" stroke-width="8" xlink:href="#path-1"></use>
+                </g>
+                <g transform="translate(74.000000, 46.000000)" fill="#4990E2">
+                    <text id="yes" font-family="BebasNeue, Bebas Neue" font-size="55" font-weight="normal" line-spacing="50" letter-spacing="2.20000005">
+                        <tspan x="38.3825" y="208.83">NO</tspan>
+                    </text>
+                    <path d="M125.641978,140.99982 C122.427136,141.017391 119.338982,139.747864 117.066371,137.474423 L70.521138,90.9391885 L23.975905,137.474423 C19.1714591,142.028177 11.6432423,142.028177 6.83879644,137.474423 L3.5524209,134.188754 C-1.1841403,129.448247 -1.1841403,121.76763 3.5524209,117.027123 L50.0976539,70.4918882 L3.5524209,23.9566533 C-1.16538462,19.2194021 -1.16538462,11.560477 3.5524209,6.82322586 L6.81058721,3.55165783 C11.5521123,-1.18388594 19.2343798,-1.18388594 23.975905,3.55165783 L70.521138,50.0868928 L117.066371,3.55165783 C121.80464,-1.1651343 129.465211,-1.1651343 134.20348,3.55165783 L137.461646,6.80912428 C142.179451,11.5463754 142.179451,19.2053005 137.461646,23.9425517 L90.9164128,70.4777867 L137.461646,117.013022 C142.179451,121.750273 142.179451,129.409198 137.461646,134.146449 L134.20348,137.403915 C131.945969,139.699749 128.862141,140.994984 125.641978,140.99982 L125.641978,140.99982 Z" id="no"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

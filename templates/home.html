@@ -1,0 +1,35 @@
+{% extends 'application.html' %}
+
+{% block content %}
+
+{% load app_filters %}
+
+<div class="row">
+  <div class="col-sm-3">
+    <input id="00" type="image" src="/static/img/sos_off.svg" class="btn">
+  </div>
+  <div class="col-sm-3">
+    <input id="01" type="image" src="/static/img/yes_off.svg" class="btn">
+  </div>
+  <div class="col-sm-3">
+    <input id="02" type="image" src="/static/img/no_off.svg" class="btn">
+  </div>
+  <div class="col-sm-3">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+    <input id="10" type="image" src="/static/img/sos_off.svg" class="btn">
+  </div>
+  <div class="col-sm-3">
+    <input id="11" type="image" src="/static/img/yes_off.svg" class="btn">
+  </div>
+  <div class="col-sm-3">
+    <input id="12" type="image" src="/static/img/no_off.svg" class="btn">
+  </div>
+  <div class="col-sm-3">
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="306px" height="306px" viewBox="0 0 306 306" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>yes_off</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0.196451336,22.99199 C0.196451336,10.2938646 10.489402,1.72824173e-15 23.1942619,1.72824173e-15 L267.002189,1.72824173e-15 C279.70353,1.72824173e-15 290,10.3048494 290,22.99199 L290,266.547097 C290,279.245223 279.707049,289.539087 267.002189,289.539087 L23.1942619,289.539087 C10.4929218,289.539087 0.196451336,279.234238 0.196451336,266.547097 L0.196451336,22.99199 Z" id="path-1"></path>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="4.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="3" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.587372449   0 0 0 0 0.587372449   0 0 0 0 0.587372449  0 0 0 0.503198596 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-4" y="-4" width="297.803549" height="297.539087">
+            <rect x="-3.80354866" y="-4" width="297.803549" height="297.539087" fill="white"></rect>
+            <use xlink:href="#path-1" fill="black"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="home_off" transform="translate(-360.000000, -15.000000)">
+            <g id="yes_off" transform="translate(368.000000, 20.000000)">
+                <g id="Rectangle-14">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <use stroke="#4990E2" mask="url(#mask-3)" stroke-width="8" xlink:href="#path-1"></use>
+                </g>
+                <g transform="translate(67.000000, 46.000000)" id="yes" fill="#4990E2">
+                    <path d="M55.7560277,143.036093 C52.9974689,143.036093 50.41132,142.001634 48.5148108,140.105125 L3.34341047,93.5544448 C-0.966837653,89.5890165 -1.13924758,82.8650294 2.99859062,78.5547813 C6.9640189,74.2445332 13.688006,74.0721233 17.9982541,78.2099615 L51.1009597,101.830121 C52.9974689,103.55422 55.9284376,103.209401 57.4801269,101.140481 L135.926643,4.24610363 C139.374841,-0.408964347 146.098828,-1.4434239 150.753896,2.17718453 C155.408964,5.62538303 156.443424,12.3493701 152.822815,17.0044381 L64.204114,138.725845 C62.3076048,141.139584 59.549046,142.691273 56.6180773,142.863683 C56.2732575,143.036093 56.1008475,143.036093 55.7560277,143.036093 Z"></path>
+                    <text font-family="BebasNeue, Bebas Neue" font-size="55" font-weight="normal" line-spacing="50" letter-spacing="2.20000005">
+                        <tspan x="35.6199999" y="208.83">YES</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

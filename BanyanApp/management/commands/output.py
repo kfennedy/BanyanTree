@@ -9,7 +9,7 @@ class Command(BaseCommand):
         pass
 
     def handle(self, *args, **options):
-        ser = serial.Serial('/dev/cu.usbmodem14121', 9600)
+        ser = serial.Serial('/dev/cu.usbmodem14221', 9600)
 
         while True:
             lights = Light.objects.all()
@@ -24,12 +24,17 @@ class Command(BaseCommand):
                 db += " "
                 db += state
                 db += " "
-            db += " "
+            # db += " "
+
+            air = Air.objects.all()[0]
+            db += "13 "
+            db += str(0) if air.state is False else str(1)
+            db += "  "
 
             x = ser.readline()
 
             if x == "output\r\n":
-                # print "db = ", db
+                print "db = ", db
                 aha = bytes(db)
                 ser.write(aha)
                 # ser.flush()

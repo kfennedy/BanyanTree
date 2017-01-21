@@ -12,12 +12,14 @@ from BanyanApp.helper import *
 import serial, threading, time
 import tkMessageBox
 from django.core.management.base import BaseCommand, CommandError
-counter = Air.objects.all()[0].value
 
 def root(request):
     return render(request, "root.html")
 
-#change this to configA
+def home(request):
+    context = {}
+    return render(request, "home.html", context)
+
 def configA(request):
     global counter
     lights = Light.objects.all()
@@ -68,41 +70,6 @@ def configA(request):
     context = {"dict": {"lights":lights}, "air":air, "conf":selected_conf, "show":show_status, "status":light_status}
 
     return render(request, "configA.html", context)
-
-def indiv(request):
-    lights = Light.objects.all()
-    air = Air.objects.all()[0]
-    context = {"dict": {"lights":lights}, "air":air}
-
-    if request.method == 'POST':
-        if "lights" in request.POST:
-            room = request.POST.get("room")
-            state = clean(request.POST.get("state"))
-            light = Light.objects.get(room=room)
-            light.state = state
-            light.save()
-
-        elif "all_lights" in request.POST:
-            state = request.POST.get("all_lights")
-            state = bool(state)
-            for light in lights:
-                light.state = state
-                light.save()
-
-        elif "aircon" in request.POST:
-            state = clean(request.POST.get("state"))
-            air.state = state
-            air.save()
-
-        elif "air_add" in request.POST:
-            air.value += 1
-            air.save()
-
-        elif "air_sub" in request.POST:
-            air.value -= 1
-            air.save()
-
-    return render(request, "indiv.html", context)
 
 # {'A1': False, 'A3': False, 'A2': False}
 def build_status():

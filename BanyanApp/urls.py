@@ -2,12 +2,11 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 from .views import (
-root, configA, indiv
+root,home,
 )
 
 
 urlpatterns = [
 url(r'^$', root),
-url(r'^configA/$', configA),
-url(r'^indiv/$', indiv),
+url(r'^home/$', home),
 ]

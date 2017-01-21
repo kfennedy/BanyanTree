@@ -2,7 +2,7 @@
 <html>
 
   <head>
-    <title>BanyanTree App</title>
+    <title>Team Blink</title>
 
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
@@ -24,11 +24,9 @@
   </head>
 
   <body>
-    <div class="row">
-      <div class="col-sm-6 col-centered">
-        {% block root %}
-        {% endblock %}
-      </div>
+    <div class="col-sm-6 col-centered">
+      {% block root %}
+      {% endblock %}
     </div>
     {% block content %}
     {% endblock %}
